@@ -38,7 +38,8 @@ import (
 	"log"
 	// TODO 配置log包，使其在日志消息开头打印命令名称（“greetings:”），但不包含时间戳或源文件信息
 
-	"github.com/brightlau/go_pro_pl/datatype"
+	"github.com/brightlau/go_pro_pl/data_type"
+
 	// 导入其他 datatype package 包
 
 	"github.com/greetings"
@@ -51,6 +52,9 @@ import (
 
 	// TODO 多模块开发 go work
 	"github.com/brightlau/go_pro_pl/hello"
+
+	// mysql 数据库操作
+	"github.com/brightlau/go_pro_pl/data_access"
 )
 
 /*
@@ -68,7 +72,7 @@ func main() { // 实现一个 main 函数，用于将消息打印到控制台。
 	fmt.Println("Hello Go!")
 	var str = fmt.Sprintf("Hello,%d,%f", x, Pi)
 	fmt.Println(str)
-	// %d 表示整型数字，%s 表示字符串，%f 表示浮点
+	// %d 表示整型数字，%s 表示字符串，%f 表示浮点，%v 表示 切片
 	var stock_code int = 123
 	var end_date string = "2020-12-31"
 	var url string = "Code=%d&endDate=%s"
@@ -77,7 +81,7 @@ func main() { // 实现一个 main 函数，用于将消息打印到控制台。
 
 	fmt.Println(quote.Go())
 
-	datatype.Data_type()
+	data_type.Data_type()
 
 	// 配置log包，使其在日志消息开头打印命令名称（“greetings:”），但不包含时间戳或源文件信息
 	log.SetPrefix("greetings: ")
@@ -105,6 +109,8 @@ func main() { // 实现一个 main 函数，用于将消息打印到控制台。
 
 	// 多模块开发
 	hello.Hello()
+	// mysql 数据库操作
+	data_access.Data_access()
 }
 
 // TODO go build：从 go_lab_web 目录中的命令行运行 go build 命令将代码编译为可执行文件，从 go_lab_web 目录中的命令行，运行新的 go_lab_web 可执行以确认代码是否工作
