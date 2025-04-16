@@ -3,7 +3,7 @@ package main
 /*
 声明一个 main 包（包是一种分组的方式 函数，由同一目录中的所有文件组成）
 Go 代码被分组到包中，包又被分组到模块中。模块指定了运行代码所需的依赖项，包括 Go 版本以及它所需的其他模块集
-
+TODO go项目构建
 go mod init <module-name> 初始化一个新的 Go 模块，<module-name> 是模块的路径，通常是代码托管平台上的仓库路径（如 github.com/username/repo），如果省略 <module-name>，Go 会根据当前目录名自动生成模块路径，创建一个 go.mod 文件，用于定义模块的依赖关系，go.mod 文件是 Go 模块的核心文件，记录了模块名称和依赖版本
 
 go get <package-path>@<version> 添加或更新模块依赖项，<package-path> 是要安装的包路径，<version> 是可选的版本号（如 v1.2.3 或 latest）。如果未指定版本，默认使用最新版本，下载并添加指定的依赖到 go.mod 和 go.sum 文件中，更新现有依赖项的版本
@@ -33,6 +33,8 @@ import (
 	"rsc.io/quote"
 	// 导入已发布的模块
 	// go mod tidy 或 go get rsc.io/quote@latest 引入
+
+	"github.com/brightlau/go_pro_pl/hello"
 )
 
 /*
@@ -84,6 +86,8 @@ func main() { // 实现一个 main 函数，用于将消息打印到控制台。
 	}
 	// 如果未返回错误，则将返回的消息映射打印到控制台
 	fmt.Println(messages)
+
+	hello.Hello()
 }
 
 // TODO go build：从 go_lab_web 目录中的命令行运行 go build 命令将代码编译为可执行文件，从 go_lab_web 目录中的命令行，运行新的 go_lab_web 可执行以确认代码是否工作
