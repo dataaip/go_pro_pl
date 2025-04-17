@@ -35,6 +35,7 @@ go work edit -rm 从工作区中移除模块或清理整个工作区
 import (
 	"fmt"
 	// TODO 导入热门 fmt 包 ， 其中包含格式化文本的功能，包括打印到 控制台。此包是 您获得的标准库包 当你安装 Go 时
+
 	"log"
 	// TODO 配置log包，使其在日志消息开头打印命令名称（“greetings:”），但不包含时间戳或源文件信息
 
@@ -61,6 +62,9 @@ import (
 
 	// 泛型 使用
 	"github.com/brightlau/go_pro_pl/generics"
+
+	// 模糊测试 使用
+	"github.com/brightlau/go_pro_pl/fuzzing"
 )
 
 /*
@@ -121,6 +125,8 @@ func main() { // 实现一个 main 函数，用于将消息打印到控制台。
 	web_service_gin.Web_service_gin()
 	// 泛型 使用
 	generics.SumPrint()
+	// 模糊测试 匹配
+	fuzzing.ReversePrint()
 }
 
 // TODO go build：从 go_lab_web 目录中的命令行运行 go build 命令将代码编译为可执行文件，从 go_lab_web 目录中的命令行，运行新的 go_lab_web 可执行以确认代码是否工作

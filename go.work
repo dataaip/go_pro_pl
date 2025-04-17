@@ -4,6 +4,7 @@ use (
 	.
 	./data_access
 	./example/hello
+	./fuzzing
 	./generics
 	./hello
 	./web_service_gin
