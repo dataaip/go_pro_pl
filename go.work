@@ -2,8 +2,9 @@ go 1.22.2
 
 use (
 	.
-	./web_service_gin
 	./data_access
 	./example/hello
+	./generics
 	./hello
+	./web_service_gin
 )

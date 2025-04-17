@@ -58,6 +58,9 @@ import (
 
 	// web 服务开发
 	"github.com/brightlau/go_pro_pl/web_service_gin"
+
+	// 泛型 使用
+	"github.com/brightlau/go_pro_pl/generics"
 )
 
 /*
@@ -116,6 +119,8 @@ func main() { // 实现一个 main 函数，用于将消息打印到控制台。
 	data_access.Data_access()
 	// web 服务 gin
 	web_service_gin.Web_service_gin()
+	// 泛型 使用
+	generics.SumPrint()
 }
 
 // TODO go build：从 go_lab_web 目录中的命令行运行 go build 命令将代码编译为可执行文件，从 go_lab_web 目录中的命令行，运行新的 go_lab_web 可执行以确认代码是否工作

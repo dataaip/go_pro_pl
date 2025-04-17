@@ -126,7 +126,7 @@ func Web_service_gin() {
 	router.GET("/albums/:id", getAlbumByID)
 
 	// TODO 使用 Run 函数将路由器连接到 http 服务器并启动服务器
-	router.Run("localhost:8080")
+	// router.Run("localhost:8080")
 
 	// TODO 运行 go run . 一旦代码运行，就有了一个正在运行的 HTTP 服务器，可以向其发送请求
 	// 使用 curl 向正在运行的 Web 服务发出请求 GET /albums curl http://localhost:8080/albums 或 curl http://localhost:8080/albums --header "Content-Type: application/json" --request "GET"
