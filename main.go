@@ -40,6 +40,7 @@ import (
 	// TODO 配置log包，使其在日志消息开头打印命令名称（“greetings:”），但不包含时间戳或源文件信息
 
 	"github.com/brightlau/go_pro_pl/data_type"
+	"github.com/brightlau/go_pro_pl/vuln_tutorial"
 
 	// 导入其他 datatype package 包
 
@@ -93,7 +94,7 @@ func main() { // 实现一个 main 函数，用于将消息打印到控制台。
 
 	data_type.Data_type()
 
-	// 配置log包，使其在日志消息开头打印命令名称（“greetings:”），但不包含时间戳或源文件信息
+	// 多模块开发 配置log包，使其在日志消息开头打印命令名称（“greetings:”），但不包含时间戳或源文件信息
 	log.SetPrefix("greetings: ")
 	log.SetFlags(0)
 	// v1.0 获取 greeting message 返回值并打印它.
@@ -106,7 +107,6 @@ func main() { // 实现一个 main 函数，用于将消息打印到控制台。
 	}
 	// 返回值并打印它
 	fmt.Println(message)
-
 	// 一组名字
 	names := []string{"Gladys", "Samantha", "Darrin"}
 	// 请求获取这些名称的问候消息
@@ -127,6 +127,8 @@ func main() { // 实现一个 main 函数，用于将消息打印到控制台。
 	generics.SumPrint()
 	// 模糊测试 匹配
 	fuzzing.ReversePrint()
+	// 查找扫描已知漏洞
+	vuln_tutorial.Vuln_tutorial()
 }
 
 // TODO go build：从 go_lab_web 目录中的命令行运行 go build 命令将代码编译为可执行文件，从 go_lab_web 目录中的命令行，运行新的 go_lab_web 可执行以确认代码是否工作

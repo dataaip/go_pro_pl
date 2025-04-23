@@ -7,5 +7,6 @@ use (
 	./fuzzing
 	./generics
 	./hello
+	./vuln_tutorial
 	./web_service_gin
 )
