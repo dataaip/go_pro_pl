@@ -8,6 +8,9 @@ import (
 	"regexp"
 )
 
+// 资源路径
+var resource_path = "/Users/minghui.liu/vscode/go_pro/go_pro_pl/web_application/resource/"
+
 // Page 结构体表示一个页面
 type Page struct {
 	Title string
@@ -16,14 +19,14 @@ type Page struct {
 
 // save 将页面保存到文件
 func (p *Page) save() error {
-	filename := p.Title + ".txt"
+	filename := resource_path + p.Title + ".txt"
 	log.Printf("save %s", filename)
 	return os.WriteFile(filename, p.Body, 0600)
 }
 
 // loadPage 从文件中加载页面
 func loadPage(title string) (*Page, error) {
-	filename := title + ".txt"
+	filename := resource_path + title + ".txt"
 	log.Printf("load %s", filename)
 	body, err := os.ReadFile(filename)
 	if err != nil {
@@ -64,7 +67,7 @@ func saveHandler(w http.ResponseWriter, r *http.Request, title string) {
 }
 
 // templates 用于存储解析后的模板
-var templates = template.Must(template.ParseFiles("/Users/minghui.liu/vscode/go_pro/go_pro_pl/web_application/edit.html", "/Users/minghui.liu/vscode/go_pro/go_pro_pl/web_application/view.html"))
+var templates = template.Must(template.ParseFiles(resource_path+"edit.html", resource_path+"view.html"))
 
 // renderTemplate 用于渲染模板
 func renderTemplate(w http.ResponseWriter, tmpl string, p *Page) {
