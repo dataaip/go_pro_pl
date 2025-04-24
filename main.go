@@ -40,8 +40,6 @@ import (
 	// TODO 配置log包，使其在日志消息开头打印命令名称（“greetings:”），但不包含时间戳或源文件信息
 
 	"github.com/brightlau/go_pro_pl/data_type"
-	"github.com/brightlau/go_pro_pl/vuln_tutorial"
-
 	// 导入其他 datatype package 包
 
 	"github.com/greetings"
@@ -66,6 +64,12 @@ import (
 
 	// 模糊测试 使用
 	"github.com/brightlau/go_pro_pl/fuzzing"
+
+	// 漏洞扫描 使用
+	"github.com/brightlau/go_pro_pl/vuln_tutorial"
+
+	// web 应用 wiki服务器
+	"github.com/brightlau/go_pro_pl/web_application"
 )
 
 /*
@@ -129,6 +133,8 @@ func main() { // 实现一个 main 函数，用于将消息打印到控制台。
 	fuzzing.ReversePrint()
 	// 查找扫描已知漏洞
 	vuln_tutorial.Vuln_tutorial()
+	// web 应用 wiki服务器
+	web_application.Web_application()
 }
 
 // TODO go build：从 go_lab_web 目录中的命令行运行 go build 命令将代码编译为可执行文件，从 go_lab_web 目录中的命令行，运行新的 go_lab_web 可执行以确认代码是否工作

@@ -100,6 +100,14 @@ Scanning your code and 46 packages across 1 dependent module for known vulnerabi
 No vulnerabilities found.
 ```
 
+TODO 使用 VS Code Go 查找和修复易受攻击的依赖项 可以使用适用于 Visual Studio Code 的 Go 扩展直接从编辑器中扫描代码中的漏洞
+注意：有关下图中包含的漏洞修复的说明，请参阅 govulncheck 教程 https://golang.google.cn/doc/tutorial/govulncheck
+
+TODO 如何使用 VS Code Go 扫描漏洞：
+- 步骤 1. 运行 Go： Toggle Vulncheck ：Toggle Vulncheck 命令会显示模块中列出的所有依赖项的漏洞分析。要使用此命令，请在 IDE 中打开命令面板（在 Linux/Windows 上按 Ctrl+Shift+P，在 Mac OS 上按 Cmd+Shift+P）并运行 Go: Toggle Vulncheck 在 go.mod 文件中，将看到代码中直接和间接使用的易受攻击依赖项的诊断信息
+- 步骤 2. 通过代码操作运行 govulncheck 可让专注于代码中实际调用的依赖项。在 VS Code 中，代码操作由灯泡图标标记；将鼠标悬停在相关依赖项上可查看有关漏洞的信息，然后选择 快速修复 以显示选项菜单。在这些选项中，选择 运行 govulncheck 进行验证 这将在终端中返回相关的 govulncheck 输出
+- 步骤 3. 将鼠标悬停在 go.mod 文件中列出的依赖项上，还可以通过将鼠标悬停在 go.mod 文件中的依赖项上来找到有关特定依赖项的相关 govulncheck 输出。为了快速查看依赖项信息，此选项甚至比使用代码作更有效
+- 步骤 4. 升级到依赖项的 固定 版本 代码作还可用于快速升级到修复漏洞的依赖项版本。通过在代码作下拉菜单中选择 Upgrade 选项来执行此作
 */
 
 // TODO Govulncheck 是一种低噪声工具，可帮助您查找和修复 Go 项目中易受攻击的依赖项。它通过扫描项目的依赖项以查找已知漏洞，然后识别代码中对这些漏洞的任何直接或间接调用来实现此目的
