@@ -40,6 +40,7 @@ import (
 	// TODO 配置log包，使其在日志消息开头打印命令名称（“greetings:”），但不包含时间戳或源文件信息
 
 	"github.com/brightlau/go_pro_pl/data_type"
+
 	// 导入其他 datatype package 包
 
 	"github.com/greetings"
@@ -70,6 +71,9 @@ import (
 
 	// web 应用 wiki服务器
 	"github.com/brightlau/go_pro_pl/web_application"
+
+	// 代码组织
+	"github.com/brightlau/go_pro_pl/code_organization"
 )
 
 /*
@@ -93,9 +97,7 @@ func main() { // 实现一个 main 函数，用于将消息打印到控制台。
 	var url string = "Code=%d&endDate=%s"
 	var target_url string = fmt.Sprintf(url, stock_code, end_date)
 	fmt.Println(target_url)
-
 	fmt.Println(quote.Go())
-
 	data_type.Data_type()
 
 	// 多模块开发 配置log包，使其在日志消息开头打印命令名称（“greetings:”），但不包含时间戳或源文件信息
@@ -135,6 +137,8 @@ func main() { // 实现一个 main 函数，用于将消息打印到控制台。
 	vuln_tutorial.Vuln_tutorial()
 	// web 应用 wiki服务器
 	web_application.Web_application()
+	// code_organization 代码组织
+	code_organization.Code_organization()
 }
 
 // TODO go build：从 go_lab_web 目录中的命令行运行 go build 命令将代码编译为可执行文件，从 go_lab_web 目录中的命令行，运行新的 go_lab_web 可执行以确认代码是否工作
