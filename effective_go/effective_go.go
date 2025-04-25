@@ -1,0 +1,1 @@
+package effective_go

@@ -33,26 +33,13 @@ go work edit -rm 从工作区中移除模块或清理整个工作区
 */
 
 import (
-	"fmt"
-	// TODO 导入热门 fmt 包 ， 其中包含格式化文本的功能，包括打印到 控制台。此包是 您获得的标准库包 当你安装 Go 时
 
-	"log"
-	// TODO 配置log包，使其在日志消息开头打印命令名称（“greetings:”），但不包含时间戳或源文件信息
-
-	"github.com/brightlau/go_pro_pl/data_type"
-
-	// 导入其他 datatype package 包
-
-	"github.com/greetings"
-	// TODO 导入其他 go mod 模块
-	// 编辑 github.com/go_test/go_lab_web 模块以使用本地 github.com/greetings 模块，对于生产环境，您需要从其代码库中发布 github.com/greetings 模块（模块路径应反映其发布位置），以便 Go 工具能够找到并下载该模块。目前，由于您尚未发布该模块，因此需要调整 github.com/go_test/go_lab_web 模块，使其能够找到 本地文件系统上的 github.com/greetings 代码
+	// 导入其他 go mod 模块开发，使用本地 github.com/greetings 模块，对于生产环境，您需要从其代码库中发布 github.com/greetings 模块（模块路径应反映其发布位置），以便 Go 工具能够找到并下载该模块。目前，由于您尚未发布该模块，因此需要调整 github.com/go_test/go_lab_web 模块，使其能够找到 本地文件系统上的 github.com/greetings 代码
 	// 使用 go mod edit 命令来编辑 github.com/go_test/go_lab_web 模块将 Go 工具从其模块路径（模块不在其中）重定向 到本地目录（它所在的位置）, go mod edit -replace github.com/greetings=./greetings
-	"rsc.io/quote"
-	// 导入已发布的模块
-	// go mod tidy 或 go get rsc.io/quote@latest 引入
+	"github.com/greetings"
 
-	// TODO 多模块开发 go work
-	"github.com/brightlau/go_pro_pl/hello"
+	// 多模块开发 go work init 、go work use
+	"github.com/brightlau/go_pro_pl/say_hello"
 
 	// mysql 数据库操作
 	"github.com/brightlau/go_pro_pl/data_access"
@@ -74,57 +61,17 @@ import (
 
 	// 代码组织
 	"github.com/brightlau/go_pro_pl/code_organization"
+
+	// tour_go - GO 之旅 文档
+	"github.com/brightlau/go_pro_pl/tour_go"
 )
 
-/*
-Go 语言中使用 fmt.Sprintf 或 fmt.Printf 格式化字符串并赋值给新串：
-	- Sprintf 根据格式化参数生成格式化的字符串并返回该字符串。
-	- Printf 根据格式化参数生成格式化的字符串并写入标准输出。
-*/
-
-var x int = 1
-
-const Pi float32 = 3.14
-
-func main() { // 实现一个 main 函数，用于将消息打印到控制台。运行 main 包时，默认会执行 main 函数
-	fmt.Println("Hello, " + "Go!")
-	fmt.Println("Hello Go!")
-	var str = fmt.Sprintf("Hello,%d,%f", x, Pi)
-	fmt.Println(str)
-	// %d 表示整型数字，%s 表示字符串，%f 表示浮点，%v 表示 切片
-	var stock_code int = 123
-	var end_date string = "2020-12-31"
-	var url string = "Code=%d&endDate=%s"
-	var target_url string = fmt.Sprintf(url, stock_code, end_date)
-	fmt.Println(target_url)
-	fmt.Println(quote.Go())
-	data_type.Data_type()
-
-	// 多模块开发 配置log包，使其在日志消息开头打印命令名称（“greetings:”），但不包含时间戳或源文件信息
-	log.SetPrefix("greetings: ")
-	log.SetFlags(0)
-	// v1.0 获取 greeting message 返回值并打印它.
-	// message := greetings.Hello("Gladys")
-	// v2.0 为 Hello 返回值赋值，包括 错误 ，变量，将 Hello 参数从 Gladys 的名字更改为空 字符串，以便您可以尝试错误处理代码，查找非 nil 错误值
-	message, err := greetings.Hello("Gladys")
-	if err != nil {
-		// 使用标准库的日志包 输出错误信息。如果得到错误，则使用 日志包的 致命功能 打印错误并停止程序
-		log.Fatal(err)
-	}
-	// 返回值并打印它
-	fmt.Println(message)
-	// 一组名字
-	names := []string{"Gladys", "Samantha", "Darrin"}
-	// 请求获取这些名称的问候消息
-	messages, err := greetings.Hellos(names)
-	if err != nil {
-		log.Fatal(err)
-	}
-	// 如果未返回错误，则将返回的消息映射打印到控制台
-	fmt.Println(messages)
-
+// 实现一个 main 函数，用于将消息打印到控制台。运行 main 包时，默认会执行 main 函数
+func main() {
+	// 导入其他 go mod 模块开发
+	greetings.Greetings()
 	// 多模块开发
-	hello.Hello()
+	say_hello.Say_hello()
 	// mysql 数据库操作
 	data_access.Data_access()
 	// web 服务 gin
@@ -139,6 +86,8 @@ func main() { // 实现一个 main 函数，用于将消息打印到控制台。
 	web_application.Web_application()
 	// code_organization 代码组织
 	code_organization.Code_organization()
+	// tour_go - GO 之旅 文档
+	tour_go.Tour_go()
 }
 
 // TODO go build：从 go_lab_web 目录中的命令行运行 go build 命令将代码编译为可执行文件，从 go_lab_web 目录中的命令行，运行新的 go_lab_web 可执行以确认代码是否工作

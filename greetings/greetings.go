@@ -7,6 +7,9 @@ import (
 	"errors"
 	// TODO 导入 Go 标准库 errors 包，以便您可以 使用其 errors.New 新功能
 
+	"log"
+	// TODO 配置log包，使其在日志消息开头打印命令名称（“greetings:”），但不包含时间戳或源文件信息
+
 	"math/rand"
 	// TODO 使用 math/rand 包 以生成用于从切片中选择项目的随机数
 
@@ -59,4 +62,29 @@ func Hellos(names []string) (map[string]string, error) {
 		messages[name] = message
 	}
 	return messages, nil
+}
+
+func Greetings() {
+	// 配置log包，使其在日志消息开头打印命令名称（“greetings:”），但不包含时间戳或源文件信息
+	log.SetPrefix("greetings: ")
+	log.SetFlags(0)
+	// v1.0 获取 greeting message 返回值并打印它.
+	// message := greetings.Hello("Gladys")
+	// v2.0 为 Hello 返回值赋值，包括 错误 ，变量，将 Hello 参数从 Gladys 的名字更改为空 字符串，以便您可以尝试错误处理代码，查找非 nil 错误值
+	message, err := Hello("Gladys")
+	if err != nil {
+		// 使用标准库的日志包 输出错误信息。如果得到错误，则使用 日志包的 致命功能 打印错误并停止程序
+		log.Fatal(err)
+	}
+	// 返回值并打印它
+	fmt.Println(message)
+	// 一组名字
+	names := []string{"Gladys", "Samantha", "Darrin"}
+	// 请求获取这些名称的问候消息
+	messages, err := Hellos(names)
+	if err != nil {
+		log.Fatal(err)
+	}
+	// 如果未返回错误，则将返回的消息映射打印到控制台
+	fmt.Println(messages)
 }
