@@ -2,15 +2,16 @@ go 1.22.2
 
 use (
 	.
+	./code_organization
 	./data_access
+	./effective_go
 	./example/hello
 	./fuzzing
 	./generics
+	./guess_game
 	./say_hello
+	./tour_go
 	./vuln_tutorial
 	./web_application
 	./web_service_gin
-	./code_organization
-	./tour_go
-	./effective_go
 )

@@ -62,6 +62,9 @@ import (
 	// 代码组织
 	"github.com/dataaip/go_pro_pl/code_organization"
 
+	// guess_game
+	"github.com/dataaip/go_pro_pl/guess_game"
+
 	// tour_go - GO 之旅 文档
 	"github.com/dataaip/go_pro_pl/tour_go"
 )
@@ -86,6 +89,8 @@ func main() {
 	web_application.Web_application()
 	// code_organization 代码组织
 	code_organization.Code_organization()
+	// guess_game
+	guess_game.Guess_game()
 	// tour_go - GO 之旅 文档
 	tour_go.Tour_go()
 }
