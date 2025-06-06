@@ -12,7 +12,7 @@ import (
 	// 解码单个UTF-8字符 utf8.DecodeRune(p []byte) (r rune, size int)
 	// 编码单个UTF-8字符 utf8.EncodeRune(p []byte, r rune) int
 
-	"github.com/brightlau/go_pro_pl/fuzzing"
+	"github.com/dataaip/go_pro_pl/fuzzing"
 )
 
 /*

@@ -1,4 +1,4 @@
-module github.com/brightlau/go_pro_pl
+module github.com/dataaip/go_pro_pl
 
 go 1.22.2
 

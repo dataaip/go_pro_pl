@@ -3,7 +3,7 @@ package code_organization
 import (
 	"fmt"
 
-	"github.com/brightlau/go_pro_pl/code_organization/morestrings"
+	"github.com/dataaip/go_pro_pl/code_organization/morestrings"
 
 	"github.com/google/go-cmp/cmp"
 )

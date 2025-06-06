@@ -1,4 +1,4 @@
-module github.com/brightlau/go_pro_pl/web_service_gin
+module github.com/dataaip/go_pro_pl/web_service_gin
 
 go 1.22.2
 

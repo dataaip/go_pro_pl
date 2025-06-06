@@ -1,4 +1,4 @@
-module github.com/brightlau/go_pro_pl/say_hello
+module github.com/dataaip/go_pro_pl/say_hello
 
 go 1.22.2
 

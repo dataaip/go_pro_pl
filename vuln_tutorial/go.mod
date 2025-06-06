@@ -1,4 +1,4 @@
-module github.com/brightlau/go_pro_pl/vuln_tutorial
+module github.com/dataaip/go_pro_pl/vuln_tutorial
 
 go 1.22.2
 

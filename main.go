@@ -39,31 +39,31 @@ import (
 	"github.com/greetings"
 
 	// 多模块开发 go work init 、go work use
-	"github.com/brightlau/go_pro_pl/say_hello"
+	"github.com/dataaip/go_pro_pl/say_hello"
 
 	// mysql 数据库操作
-	"github.com/brightlau/go_pro_pl/data_access"
+	"github.com/dataaip/go_pro_pl/data_access"
 
 	// web 服务开发
-	"github.com/brightlau/go_pro_pl/web_service_gin"
+	"github.com/dataaip/go_pro_pl/web_service_gin"
 
 	// 泛型 使用
-	"github.com/brightlau/go_pro_pl/generics"
+	"github.com/dataaip/go_pro_pl/generics"
 
 	// 模糊测试 使用
-	"github.com/brightlau/go_pro_pl/fuzzing"
+	"github.com/dataaip/go_pro_pl/fuzzing"
 
 	// 漏洞扫描 使用
-	"github.com/brightlau/go_pro_pl/vuln_tutorial"
+	"github.com/dataaip/go_pro_pl/vuln_tutorial"
 
 	// web 应用 wiki服务器
-	"github.com/brightlau/go_pro_pl/web_application"
+	"github.com/dataaip/go_pro_pl/web_application"
 
 	// 代码组织
-	"github.com/brightlau/go_pro_pl/code_organization"
+	"github.com/dataaip/go_pro_pl/code_organization"
 
 	// tour_go - GO 之旅 文档
-	"github.com/brightlau/go_pro_pl/tour_go"
+	"github.com/dataaip/go_pro_pl/tour_go"
 )
 
 // 实现一个 main 函数，用于将消息打印到控制台。运行 main 包时，默认会执行 main 函数

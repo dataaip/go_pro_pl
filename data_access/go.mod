@@ -1,4 +1,4 @@
-module github.com/brightlau/go_pro_pl/data_access
+module github.com/dataaip/go_pro_pl/data_access
 
 go 1.22.2
 

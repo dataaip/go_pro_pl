@@ -47,7 +47,7 @@ import (
 )
 
 // 资源路径 定义了一个全局变量 resource_path，表示资源文件的存储路径。所有页面内容文件（.txt 文件）和 HTML 模板文件都存储在此路径下
-var resource_path = "/home/brightl/code/vscode_code/go_pro/go_pro_pl/web_application/resource/"
+var resource_path = "/Users/minghui.liu/vscode/dataaip/go_pro_pl/web_application/resource/"
 
 // Page 结构体表示一个页面 定义了一个结构体 Page，用于表示一个页面的数据
 // Title：页面的标题，通常是文件名的一部分
