@@ -31,6 +31,8 @@ TODO 编写 Web 应用程序
 
 import (
 	"html/template"
+	"path/filepath"
+
 	// 用于安全地渲染 HTML 模板
 
 	"log"
@@ -47,7 +49,7 @@ import (
 )
 
 // 资源路径 定义了一个全局变量 resource_path，表示资源文件的存储路径。所有页面内容文件（.txt 文件）和 HTML 模板文件都存储在此路径下
-var resource_path = "/Users/minghui.liu/vscode/dataaip/go_pro_pl/web_application/resource/"
+var resource_path = "web_application/resource/"
 
 // Page 结构体表示一个页面 定义了一个结构体 Page，用于表示一个页面的数据
 // Title：页面的标题，通常是文件名的一部分
@@ -72,7 +74,7 @@ type Page struct {
 // TODO save 方法返回一个错误值，因为这是 WriteFile（将字节切片写入文件的标准库函数）的返回类型。save 方法返回 error 值，以便在写入文件时出现任何问题时让应用程序处理它。如果一切顺利，Page.save() 将返回 nil（指针、接口和一些其他类型的零值）
 // TODO 八进制整数文本 0600，作为第三个参数传递给 WriteFile 表示应使用 仅当前用户的读写权限。（请参阅 Unix 手册页 open（2） 了解详情
 func (p *Page) save() error {
-	filename := resource_path + p.Title + ".txt"
+	filename := filepath.Join(resource_path, p.Title+".txt")
 	log.Printf("save %s", filename)
 	return os.WriteFile(filename, p.Body, 0600)
 }
@@ -91,7 +93,7 @@ func (p *Page) save() error {
 // TODO 函数可以返回多个值。标准库函数 操作系统。ReadFile 返回 []byte 和 error 在 loadPage 中，尚未处理错误;由下划线 （_） 符号表示的“空白标识符”用于丢弃错误返回值（实质上，将值分配给 nothing），但是，如果 ReadFile 遇到错误，会发生什么情况？例如，该文件可能不存在。不应该忽视这样的错误。修改函数以返回 *Page 和 error
 // TODO 此函数的调用者现在可以检查第二个参数; 如果是 nil 则它已成功加载一个 Page 否则，它将是一个 错误 （请参阅 language specification 了解详情）https://golang.google.cn/ref/spec#Errors
 func loadPage(title string) (*Page, error) {
-	filename := resource_path + title + ".txt"
+	filename := filepath.Join(resource_path, title+".txt")
 	log.Printf("load %s", filename)
 	body, err := os.ReadFile(filename)
 	if err != nil {
@@ -448,7 +450,7 @@ func saveHandler(w http.ResponseWriter, r *http.Request, title string) {
 // 模板文件包括：
 // - edit.html：用于编辑页面
 // - view.html：用于查看页面
-var templates = template.Must(template.ParseFiles(resource_path+"edit.html", resource_path+"view.html"))
+var templates = template.Must(template.ParseFiles(filepath.Join(resource_path, "edit.html"), filepath.Join(resource_path, "view.html")))
 
 // renderTemplate 用于渲染模板 定义了一个函数 renderTemplate，用于渲染指定的 HTML 模板
 // 功能：
