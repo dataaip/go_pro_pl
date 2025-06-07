@@ -65,7 +65,7 @@ import (
 	// guess_game
 	"github.com/dataaip/go_pro_pl/guess_game"
 
-	// tour_go - GO 之旅 文档
+	// tour_go - go 学习包 文档
 	"github.com/dataaip/go_pro_pl/tour_go"
 )
 
@@ -91,7 +91,7 @@ func main() {
 	code_organization.Code_organization()
 	// guess_game
 	guess_game.Guess_game()
-	// tour_go - GO 之旅 文档
+	// tour_go - go 学习包 文档
 	tour_go.Tour_go()
 }
 

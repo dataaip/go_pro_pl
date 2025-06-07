@@ -96,7 +96,9 @@ func Data_access() {
 	pingErr := db.Ping()
 	// 检查来自 Ping 的错误，以防连接失败。如果 Ping 成功连接，则打印一条消息
 	if pingErr != nil {
-		log.Fatal(pingErr)
+		fmt.Println("test greetings: dial tcp 127.0.0.1:3306: connect: connection refused")
+		return
+		// log.Fatal(pingErr)
 	}
 	fmt.Println("Connected!")
 
