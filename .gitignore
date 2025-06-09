@@ -24,4 +24,4 @@
 # env file
 .env
 
-./go_pro_pl
+go_pro_pl*
